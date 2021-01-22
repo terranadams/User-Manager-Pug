@@ -1,0 +1,22 @@
+{
+    "users": [
+        {
+            "name": "Terran",
+            "username": "kickflipr",
+            "email": "terranadams@gmail.com",
+            "age": 24
+        },
+        {
+            "name": "Terran",
+            "username": "kickflipr",
+            "email": "terranadams@gmail.com",
+            "age": 24
+        },
+        {
+            "name": "Terran",
+            "username": "kickflipr",
+            "email": "terranadams@gmail.com",
+            "age": 24
+        }
+    ]
+}
