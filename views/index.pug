@@ -1,9 +1,11 @@
 html
     head
     body
+        a(href='/create')
+            button Add User
         each user in users
             h3 #{user.name}
             ul
-                li #{user.username}
+                li #{user.userId}
                 li #{user.email}
                 li #{user.age}
