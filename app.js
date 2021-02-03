@@ -5,7 +5,6 @@ let app = express()
 
 app.set('views', './views') // These two lines allow the fake html to be compiled to real html
 app.set('view engine', 'pug')
-
 app.use(express.urlencoded({extended: false}))
 
 app.get('/', (req, res) => {
@@ -34,12 +33,14 @@ app.post('/create', (req, res) => {
             if (err) throw err
         })
     })
-
     res.redirect('/')
-
-    
 })
-
+app.get('/users/:index', (req, res) => {// This lets us get data from the url
+    fs.readFile('users.json', (err, data) => {
+        var user = JSON.parse(data).users[req.params.index] // This is how we get the object thru the index within url
+        res.send(`You clicked on ${user.name}`) 
+    })
+})
 app.listen(3000, () => {
     console.log("Listening on port 3000.")
 })
