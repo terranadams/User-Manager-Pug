@@ -6,7 +6,7 @@ let starters = {
         {
             "name": "Terran",
             "userId": "kickflipr",
-            "email": "Yo mama",
+            "email": "terranadams@gmail.com",
             "age": "24"
         },
         {
