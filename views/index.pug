@@ -1,28 +1,23 @@
+doctype html
 html
     head
-        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
-        integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous')
-    
-        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-    
-        link(rel='stylesheet', href='/stylesheets/style.css')
+        
+        link(rel='stylesheet', href='/styles/style.css')
+
+         
     body
+        h2 Simple User Manager
         a(href='/create')
             button Add User
+        p
         each user, index in users
-            div(class='border border-dark')
-                span.col-3 Name: #{user.name}
-                span.col-3 UserID: #{user.userId}
-                span.col-3 Email: #{user.email}
-                span.col-3 Age: #{user.age}
+            div(class='myUsers')
+                div.col-3 Name: #{user.name} 
+                div.col-3 UserID: #{user.userId} 
+                div.col-3 Email: #{user.email} 
+                div.col-3 Age: #{user.age} 
                 a(href='/users/' + index)
                     button Edit
                 form(action="/delete/" + index, method='post')
-                    input(type='submit')
+                    button(type='submit') Delete
                 p
-
-        script(src='https://code.jquery.com/jquery-3.2.1.min.js'
-        integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
-        crossorigin='anonymous')
-        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
-        integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous')

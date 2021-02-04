@@ -1,5 +1,6 @@
 const express = require('express')
 const fs = require('fs')
+const path = require('path')
 let starters = {
     "users": [
         {
@@ -27,11 +28,11 @@ fs.writeFile('users.json', JSON.stringify(starters), (err, data) => {
     })
 let app = express()
 
-app.set('views', './views') // These two lines allow the fake html to be compiled to real html
+app.set('views', path.join(__dirname, 'views')) // These two lines allow the fake html to be compiled to real html
 app.set('view engine', 'pug')
+app.use(express.json())
 app.use(express.urlencoded({extended: false}))
-
-
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
     
