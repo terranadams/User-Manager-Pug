@@ -26,6 +26,7 @@ let starters = {
 fs.writeFile('users.json', JSON.stringify(starters), (err, data) => {
         if (err) throw err
     })
+    // Every time the app is launched, it rewrites the users.json file to equal the 'starters' array.
 let app = express()
 
 app.set('views', path.join(__dirname, 'views')) // These two lines allow the fake html to be compiled to real html
